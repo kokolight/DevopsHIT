@@ -97,7 +97,7 @@ button {
             <input type="text" placeholder="Enter Username" name="username" id="username" required>  
             <label>Password : </label>   
             <input type="password" placeholder="Enter Password" name="password" id="password" required>  
-            <button type="button" onclick="login()">Login</button>   
+            <button type="button" onclick="login()" id="login-btn">Login</button>   
             <input type="checkbox" checked="checked"> Remember me   
             <button type="button" class="cancelbtn" onclick="clean()"> Cancel</button>   
             Forgot <a href="#"> password? </a>
