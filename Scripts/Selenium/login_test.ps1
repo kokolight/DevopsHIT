@@ -2,7 +2,7 @@
 function Import-SeleniumModule()
 {
     if(!(Get-Module -Name Selenium)){
-        Install-Module Selenium
+        Install-Module Selenium -Confirm:$true
     }
     else
     {
