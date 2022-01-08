@@ -49,10 +49,20 @@ function Verify-Test($TestResult)
     }
 }
 
+$Hostname = $args[0]
+$Port = $args[1]
+$Path = $args[2]
+
+if( !$Hostname -or !$Port -or ! $Path)
+{
+    Write-host "Missing parameters!"
+    exit 1
+}
+
 Import-SeleniumModule
 
 # To start a Chrome Driver
-$Driver = Start-SeFirefox -StartURL "http://localhost:8888/login"
+$Driver = Start-SeFirefox -StartURL "http://$Hostname`:$Port/$Path"
 $Username = Find-SeElement -By Id -Selection "username" -Target $Driver
 $Password = Find-SeElement -By Id -Selection "password" -Target $Driver
 $Button = Find-SeElement -By Id -Selection "login-btn" -Target $Driver
