@@ -1,7 +1,7 @@
 ﻿
 function Import-SeleniumModule()
 {
-    Import-Module "../../PowershellModules/Selenium"
+    Import-Module "PowershellModules/Selenium"
 }
 
 function Clear-Elements(){
