@@ -1,13 +1,7 @@
 ﻿
 function Import-SeleniumModule()
 {
-    if(!(Get-Module -Name Selenium)){
-        Install-Module Selenium -Confirm:$false -Force
-    }
-    else
-    {
-        Import-Module Selenium
-    }
+    Import-Module Selenium
 }
 
 function Clear-Elements(){
