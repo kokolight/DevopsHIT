@@ -51,7 +51,6 @@ function Verify-Test($TestResult)
 
 Import-SeleniumModule
 
-<#
 # To start a Chrome Driver
 $Driver = Start-SeFirefox -StartURL "http://localhost:8888/login"
 $Username = Find-SeElement -By Id -Selection "username" -Target $Driver
@@ -71,4 +70,3 @@ Assert-Test $Test3
 
 Write-Host "All tests have passed!"
 exit 0
-#>
