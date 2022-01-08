@@ -2,6 +2,7 @@
 $port = $args[1]
 if(!$hostname -or !$port)
 {
+    Write-Host "Missing parameters!"
     exit 1
 }
 
