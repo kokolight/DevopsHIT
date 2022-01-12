@@ -75,7 +75,7 @@ button {
 		margin: auto;
 		width: 500px;
         padding: 25px; 
-        background-color: dodgerblue;  
+        background-color: lightblue;  
     }
 	
   .result {
