@@ -68,7 +68,7 @@ if( !$Hostname -or !$Port -or ! $Path)
 Import-SeleniumModule
 
 # To start a Chrome Driver
-$Driver = Start-SeFirefox -StartURL "http://$Hostname`:$Port/$Path"
+$Driver = Start-SeFirefox -StartURL "http://$Hostname`:$Port/$Path" -SuppressLogging -Quiet
 $Username = Find-SeElement -By Id -Selection "username" -Target $Driver
 $Password = Find-SeElement -By Id -Selection "password" -Target $Driver
 $Button = Find-SeElement -By Id -Selection "login-btn" -Target $Driver
