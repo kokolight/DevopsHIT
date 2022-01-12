@@ -32,20 +32,26 @@ function TestCancelButton(){
     return ($Username.Text -eq "" -and $Password.Text -eq "")
 }
 
-function Assert-Test($TestResult)
+function Assert-Test($TestName, $TestResult)
 {
+    Write-Host "$TestName - " -NoNewline
     if(!$TestResult){
-        Write-Host "Test has failed!"
+        Write-Host "FAILED!"
         exit 1
     }
-    Write-Host "Test passed!"
+    Write-Host "PASSED!"
 }
 
-function Verify-Test($TestResult)
+function Verify-Test($TestName, $TestResult)
 {
+    Write-Host "$TestName - " -NoNewline
     if(!$TestResult)
     {
-        Write-Host "Test has failed!"
+        Write-Host "FAILED!"
+    }
+    else
+    {
+        Write-Host "PASSED!"
     }
 }
 
@@ -70,13 +76,13 @@ $Result = Find-SeElement -By Id -Selection "result" -Target $Driver
 $CancelBtn = Find-SeElement -By ClassName -Selection "cancelbtn" -Target $Driver
 
 $Test1 = TestCorrectPassword
-Assert-Test $Test1
+Assert-Test -TestName "Check correct credentials" -TestResult $Test1 
 Start-Sleep -Seconds 1
 $Test2 =TestCancelButton
-Assert-Test $Test2
+Assert-Test -TestName "Check cancel button clears textboxes" -TestResult $Test2
 Start-Sleep -Seconds 1
 $Test3 = TestWrongPassword
-Assert-Test $Test3
+Assert-Test -TestName "Check wrong credentials" -TestResult $Test3
 
 Write-Host "All tests have passed!"
 exit 0
